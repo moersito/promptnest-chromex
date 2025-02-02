@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptNest Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="welcomeText">Welcome, Guest</h1>
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <main>
+        
+        <section class="add-prompt">
+            <input type="text" id="promptInput" placeholder="Enter your prompt here...">
+            <select id="categorySelect">
+                <option value="">No Category</option>
+            </select>
+            <button id="addPromptBtn">Add Prompt</button>
+            <button id="manageCategoriesBtn">Manage Categories</button>
+        </section>
+        
+        <section class="filter-section">
+            <label for="filterCategory">Filter by Category:</label>
+            <select id="filterCategory">
+                <option value="">All Categories</option>
+            </select>
+        </section>
+        
+        <section class="prompt-list" id="promptList">
+            <!-- List of prompts will appear here -->
+        </section>
+        
+    </main>
+</body>
+</html>

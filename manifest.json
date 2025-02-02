@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "PromptNest",
+    "version": "1.0",
+    "description": "PromptNest is a Chrome extension to collects , analyze many prompt text for any AI chat platforms in the world.",
+    "permissions": ["identity", "storage"],
+    "host_permissions": ["https://accounts.google.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "PromptNest_16.png",
+        "48": "PromptNest_48.png",
+        "128": "PromptNest_128.png"
+      }
+    }
+  }
+  
