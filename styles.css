@@ -1,203 +1,174 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-#popup-container {
-  width: 600px; /* Lebar lebih besar seperti di SimilarWeb */
-  height: 700px; /* Menyesuaikan dengan UI yang lebih besar */
-  background-color: #ffffff;
-  border-radius: 16px; /* Rounded corners */
-  margin: 20px auto;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  top: 20px; /* Mengurangi margin atas */
+/* Popup Container */
+.popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  margin-top: 10px;
+  margin-right: 10px;
+  overflow-y: auto;
 }
 
-/* Header */
-header {
+/* Popup Content */
+.popup-content {
+  padding: 10px;
+}
+
+/* Header Section */
+.popup-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-}
-
-.header-left .logo {
-  width: 30px;
-  height: 30px;
-  margin-right: 15px;
-}
-
-.app-name {
-  font-size: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-.header-right {
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-}
-
-/* Sidebar Menu */
-.sidebar {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #ffffff;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
-  padding-top: 60px;
-  z-index: 10;
-  transition: transform 0.3s ease;
-}
-
-.sidebar.show {
-  transform: translateX(0);
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li {
-  padding: 20px;
-  border-bottom: 1px solid #f1f1f1;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #555;
-  font-size: 16px;
-  display: block;
-}
-
-#menu-icon {
-  cursor: pointer;
-}
-
-#menu {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  display: none;
-  z-index: 1000;
-}
-
-#menu-button {
-  font-size: 30px;
-  cursor: pointer;
-  color: #333;
-}
-
-/* Modern Scrollbar */
-#popup-container::-webkit-scrollbar {
-  width: 6px;
-}
-
-#popup-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-#popup-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Main Content */
-#main-content {
-  margin: 20px;
-  padding: 20px;
-}
-
-.ai-logos {
-  display: flex;
-  justify-content: space-evenly;
   margin-bottom: 20px;
 }
 
-.ai-logo {
-  width: 50px;
-  height: 50px;
-  transition: filter 0.3s ease;
-}
-
-.ai-logo.on {
-  filter: brightness(1.5);
-}
-
-.cards-section {
+.logo-title {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  align-items: center;
 }
 
-.card {
-  width: 30%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
-.card h4 {
-  font-size: 18px;
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu Section */
+.menu {
+  display: none;
+  margin-top: 20px;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
   margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.menu a:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
-#prompts-graph {
-  margin-top: 30px;
+/* Cards Section */
+.dashboard-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Platform Logos */
+.platform-logos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+}
+
+.platform-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.platform span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Graph Section */
+.graph-section {
+  margin-bottom: 20px;
+}
+
+/* Latest Prompts */
+.latest-prompts h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .latest-prompts ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
 .latest-prompts li {
-  padding: 10px;
-  border-bottom: 1px solid #f1f1f1;
-}
-
-.latest-prompts li p {
-  margin: 0;
   font-size: 14px;
   color: #555;
+  padding-left: 20px;
+  position: relative;
 }
 
-#login-container {
-  margin-top: 20px;
-  text-align: center;
+.latest-prompts li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #4A90E2;
 }
 
-#login-btn {
-  padding: 10px 20px;
-  background-color: #4285f4;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
+/* Modern Scrollbar */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Make the menu visible */
+.menu.show {
+  display: block;
 }

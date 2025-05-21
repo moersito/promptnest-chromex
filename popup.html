@@ -4,87 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PromptNest</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Popup Container -->
-  <div id="popup-container">
+  <!-- Popup Window -->
+  <div class="popup-container">
+    <div class="popup-content">
 
-    <!-- Header -->
-    <header>
-      <div class="header-left">
-        <img src="icons/PromptNest_48.png" alt="PromptNest Logo" class="logo">
-        <span class="app-name">PromptNest</span>
-      </div>
-      <div class="header-right">
-        <button id="menu-icon">...</button>
-      </div>
-    </header>
-
-    <!-- Sidebar Menu (hidden by default) -->
-    <div id="menu" class="sidebar">
-      <ul>
-        <li><a href="#" id="dashboard-link">Dashboard</a></li>
-        <li><a href="#" id="prompts-link">Prompts</a></li>
-        <li><a href="#" id="categories-link">Categories</a></li>
-        <li><a href="#" id="settings-link">Settings</a></li>
-        <li><a href="#" id="feedback-link">Feedback</a></li>
-        <li><a href="#" id="rate-link">Rate</a></li>
-        <li><a href="#" id="share-link">Share</a></li>
-      </ul>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main-content">
-      <!-- Section 1: AI Platform Logos -->
-      <section id="section-1">
-        <div class="ai-logos">
-          <img src="icons/Logo_ChatGPT.png" class="ai-logo" id="chatgpt-logo" />
-          <img src="icons/Logo_GoogleGemini.png" class="ai-logo" id="gemini-logo" />
-          <img src="icons/Logo_DeepSeek.png" class="ai-logo" id="deepseek-logo" />
-          <img src="icons/Logo_ChatGPT.png" class="ai-logo" id="metaai-logo" />
+      <!-- Header Section -->
+      <div class="popup-header">
+        <div class="logo-title">
+          <img src="logo.png" alt="PromptNest Logo" class="logo">
+          <h3>PromptNest</h3>
         </div>
-        <div id="status-message"></div>
-      </section>
+        <button class="menu-toggle" id="menu-toggle">&#x22EE;</button>
+      </div>
 
-      <!-- Section 2: Cards for Prompts, Categories, and Platforms -->
-      <section id="section-2" class="cards-section">
-        <div class="card" id="prompts-card">
-          <h4>Prompts</h4>
+      <!-- Menu Section (Hidden initially) -->
+      <div id="menu" class="menu">
+        <a href="#">Dashboard</a>
+        <a href="#">Prompts</a>
+        <a href="#">Categories</a>
+        <a href="#">Settings</a>
+        <a href="https://feedback-form-link.com" target="_blank">Feedback</a>
+        <a href="#">Rate</a>
+        <a href="#">Share</a>
+      </div>
+
+      <!-- Dashboard Section -->
+      <div class="dashboard-section">
+        <div class="card">
+          <h5>Prompts</h5>
           <p id="prompts-count">0</p>
         </div>
-        <div class="card" id="categories-card">
-          <h4>Categories</h4>
+        <div class="card">
+          <h5>Categories</h5>
           <p id="categories-count">0</p>
         </div>
-        <div class="card" id="platforms-card">
-          <h4>Platforms</h4>
+        <div class="card">
+          <h5>Platforms</h5>
           <p id="platforms-count">0</p>
         </div>
-      </section>
-
-      <!-- Section 3: Graph for Prompts per Platform -->
-      <section id="section-3">
-        <h3>Prompts by Platform (Last 7 Days)</h3>
-        <div id="prompts-graph"></div>
-      </section>
-
-      <!-- Section 4: Latest Prompts -->
-      <section id="section-4">
-        <h3>Latest Prompts</h3>
-        <ul id="latest-prompts"></ul>
-      </section>
-
-      <!-- Login Button for Premium Version -->
-      <div id="login-container">
-        <button id="login-btn">Login with Google</button>
       </div>
-    </main>
 
+      <!-- Section: AI Platform Logos -->
+      <div class="platform-logos">
+        <div class="platform">
+          <img src="chatgpt-logo.png" alt="ChatGPT" class="platform-logo" id="chatgpt-logo">
+          <span id="chatgpt-status">Off</span>
+        </div>
+        <div class="platform">
+          <img src="gemini-logo.png" alt="Gemini" class="platform-logo" id="gemini-logo">
+          <span id="gemini-status">Off</span>
+        </div>
+        <div class="platform">
+          <img src="deepseek-logo.png" alt="DeepSeek" class="platform-logo" id="deepseek-logo">
+          <span id="deepseek-status">Off</span>
+        </div>
+        <div class="platform">
+          <img src="meta-ai-logo.png" alt="Meta.AI" class="platform-logo" id="meta-ai-logo">
+          <span id="meta-ai-status">Off</span>
+        </div>
+      </div>
+
+      <!-- Section: Prompts Graph -->
+      <div class="graph-section">
+        <canvas id="prompts-graph"></canvas>
+      </div>
+
+      <!-- Section: Latest Prompts -->
+      <div class="latest-prompts">
+        <h5>Latest Prompts</h5>
+        <ul id="latest-prompts">
+          <li>Prompt 1</li>
+          <li>Prompt 2</li>
+          <li>Prompt 3</li>
+          <li>Prompt 4</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 
-  <!-- JavaScript -->
   <script src="popup.js"></script>
 </body>
 </html>

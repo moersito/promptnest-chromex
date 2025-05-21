@@ -1,37 +1,31 @@
-document.getElementById('menu-icon').addEventListener('click', () => {
-    document.getElementById('menu').style.display = 'block';
-  });
-  
-  document.getElementById('login-btn').addEventListener('click', () => {
-    // Handle Google Login for Premium Version
-    alert('Login with Google functionality goes here!');
-  });
-  
-  // Detect which AI platform is active
-  function detectActivePlatform() {
-    // Example logic for detecting active platform, replace with real detection logic
-    const currentUrl = window.location.href;
-  
-    if (currentUrl.includes('chat.openai.com')) {
-      document.getElementById('chatgpt-logo').classList.add('on');
-      document.getElementById('status-message').textContent = 'ChatGPT is On';
+// Handle the menu toggle functionality
+document.getElementById("menu-toggle").addEventListener("click", function() {
+  var menu = document.getElementById("menu");
+  menu.classList.toggle("show");  // Toggle the visibility of the menu
+});
+
+// Sample data to update the content dynamically
+document.getElementById("prompts-count").innerText = 120; // Example count
+document.getElementById("categories-count").innerText = 10; // Example count
+document.getElementById("platforms-count").innerText = 4; // Example count
+
+// Example logic to change platform status based on platform detection (pseudo-code)
+function detectPlatform() {
+  // This logic is just an example, replace it with real detection
+  const platforms = ["ChatGPT", "Gemini", "DeepSeek", "Meta.AI"];
+  platforms.forEach(platform => {
+    const platformLogo = document.getElementById(`${platform.toLowerCase()}-logo`);
+    const platformStatus = document.getElementById(`${platform.toLowerCase()}-status`);
+    
+    if (/* condition to check if platform is active */) {
+      platformLogo.classList.remove("opacity-50");
+      platformLogo.classList.add("opacity-100");
+      platformStatus.innerText = "On";
     } else {
-      document.getElementById('chatgpt-logo').classList.remove('on');
+      platformLogo.classList.add("opacity-50");
+      platformStatus.innerText = "Off";
     }
-  }
-  
-  // Update statistics (e.g., total prompts)
-  function updateStatistics() {
-    document.getElementById('prompts-count').textContent = '100';
-    document.getElementById('categories-count').textContent = '5';
-    document.getElementById('platforms-count').textContent = '3';
-  }
-  
-  // Load initial state
-  function loadInitialState() {
-    detectActivePlatform();
-    updateStatistics();
-  }
-  
-  window.onload = loadInitialState;
-  
+  });
+}
+
+detectPlatform();
